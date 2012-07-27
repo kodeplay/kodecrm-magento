@@ -1,0 +1,72 @@
+<?xml version="1.0" ?>
+<config>
+	<tabs>
+		<chat_tab translate="label">
+			<label>Kodecrm</label>
+			<sort_order>100</sort_order>
+		</chat_tab>
+	</tabs>
+	<sections>
+
+		<chat_section translate="label">
+			<label>Setting</label>
+			<sort_order>200</sort_order>
+			<show_in_default>1</show_in_default>
+			<show_in_website>1</show_in_website>
+			<show_in_store>1</show_in_store>
+			<tab>chat_tab</tab>
+			<groups>
+
+				<feed_group translate="label">
+					<label>Feed Settings</label>
+					<comment>Kodecrm Feed Setting</comment>
+					<sort_order>10</sort_order>
+					<show_in_default>1</show_in_default>
+					<show_in_website>1</show_in_website>
+					<show_in_store>1</show_in_store>
+					<fields>
+						<status translate="label comment">
+							<label>Feed Status Enabled</label>
+							<comment></comment>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>
+							<frontend_type>select</frontend_type>
+							<source_model>adminhtml/system_config_source_yesno</source_model>
+						</status>
+						<url translate="label comment">
+							<label>Feed Url</label>
+							<comment></comment>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>
+							<backend_model>adminhtml/system_config_backend_baseurl</backend_model>
+							<frontend_type>textarea</frontend_type>
+						</url>
+					</fields>
+				</feed_group>
+				<!--
+					<chat_group translate="label"> <label> Chat Settings</label>
+					<comment>Chat Widget Settings</comment> <sort_order>10</sort_order>
+					<show_in_default>1</show_in_default>
+					<show_in_website>1</show_in_website>
+					<show_in_store>1</show_in_store> <fields> <app_id translate="label
+					comment"> <label>Application Id</label> <comment>Enter you
+					application id from Kodecrm admin</comment>
+					<show_in_default>1</show_in_default>
+					<show_in_website>1</show_in_website>
+					<show_in_store>1</show_in_store>
+					<frontend_input>text</frontend_input> </app_id> <custom
+					translate="label comment"> <label>Custom Settings</label>
+					<comment>you can find the custom settings in Kodecrm admin e.g.
+					color:#000;text:Chat with us;bg:0000099</comment>
+					<show_in_default>1</show_in_default>
+					<show_in_website>1</show_in_website>
+					<show_in_store>1</show_in_store>
+					<frontend_type>textarea</frontend_type> </custom> </fields>
+					</chat_group>
+				-->
+			</groups>
+		</chat_section>
+	</sections>
+</config>

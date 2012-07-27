@@ -1,0 +1,34 @@
+<?xml version="1.0"?>
+<config>
+	<global>
+		<helpers>
+			<feed>
+				<class>Kodecrm_Feed_Helper</class>
+			</feed>
+		</helpers>
+	</global>
+	<modules>
+		<Kodecrm_Feed>
+			<version>1.0.0</version>
+		</Kodecrm_Feed>
+	</modules>
+	<frontend>
+		<routers>
+			<routeurfrontend>
+				<use>standard</use>
+				<args>
+					<module>Kodecrm_Feed</module>
+					<frontName>kodecrm</frontName>
+				</args>
+			</routeurfrontend>
+		</routers>
+	</frontend>
+	<default>
+		<chat_section>
+			<feed_group>
+				<url>http://{{base_url}}/index.php/kodecrm</url>
+			</feed_group>
+		</chat_section>
+	</default>
+
+</config>

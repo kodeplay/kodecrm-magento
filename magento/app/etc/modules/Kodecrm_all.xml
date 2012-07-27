@@ -1,0 +1,54 @@
+<?xml version = "1.0"?>
+<config>
+	<modules>
+		<Kodecrm_Feed>
+			<active>true</active>
+			<codePool>local</codePool>
+		</Kodecrm_Feed>
+		<Kodecrm_Chat>
+			<active>true</active>
+			<codePool>local</codePool>
+		</Kodecrm_Chat>
+	</modules>
+	<modules>
+		<Kodecrm_Chat>
+			<version>1.0.0</version>
+			<depends>
+				<!-- no dependencies -->
+			</depends>
+		</Kodecrm_Chat>
+	</modules>
+	<frontend>
+		<routers>
+			<route_chat>
+				<use>standard</use>
+				<args>
+					<module>Kodecrm_Chat</module>
+					<frontName>chat</frontName>
+				</args>
+			</route_chat>
+		</routers>
+	</frontend>
+	<adminhtml>
+		<acl>
+			<resources>
+				<admin>
+					<children>
+						<system>
+							<children>
+								<config>
+									<children>
+										<chat_section translate="title">
+											<title>My Section </title>
+											<sort_order>100</sort_order>
+										</chat_section>
+									</children>
+								</config>
+							</children>
+						</system>
+					</children>
+				</admin>
+			</resources>
+		</acl>
+	</adminhtml>
+</config>
