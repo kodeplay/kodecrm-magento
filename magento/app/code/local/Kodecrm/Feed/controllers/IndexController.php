@@ -45,6 +45,8 @@ class Kodecrm_Feed_IndexController extends Mage_Core_Controller_Front_Action
 
 			$feed_helper = Mage::helper('feed');
 
+                        header('Content-Type: application/rss+xml; charset=utf-8');
+
 			$feed = $feed_helper->kodecrm_feed_create($feedarr);
 
 			echo $feed;
