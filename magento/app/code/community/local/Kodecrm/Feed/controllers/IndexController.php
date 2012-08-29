@@ -37,7 +37,7 @@ class Kodecrm_Feed_IndexController extends Mage_Core_Controller_Front_Action
                     'link' => ($product->getProductUrl()) ,
                     'image_link' => $product->getImageUrl(),
                     'price' => $product->getPrice(),
-                    'currency' => $currency,
+                    'currency' => $currency_code,
                     'availability' => (int) $product->isInStock(),
                     'category' => $categories
 				);

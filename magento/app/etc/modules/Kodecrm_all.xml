@@ -7,7 +7,7 @@
 		</Kodecrm_Feed>
 		<Kodecrm_Chat>
 			<active>true</active>
-			<codePool>local</codePool>
+			<codePool>community</codePool>
 		</Kodecrm_Chat>
 	</modules>
 	<modules>
