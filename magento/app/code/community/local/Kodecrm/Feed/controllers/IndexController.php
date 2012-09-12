@@ -8,7 +8,9 @@ class Kodecrm_Feed_IndexController extends Mage_Core_Controller_Front_Action
 				
             $collection = Mage::getModel('catalog/product')
                 ->getCollection()
-                ->addAttributeToSelect('*');
+                ->addAttributeToSelect('*')
+                ->addAttributeToFilter('status',1);
+
 
             $store = Mage::app()->getStore();
 
