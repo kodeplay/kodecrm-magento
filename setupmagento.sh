@@ -3,16 +3,45 @@
 dbuser="root"
 dbpass="kode"
 dbhost="localhost"
+webroot=/home/vineet/public_html/projects/kodecrm_platforms
 
-# extract magento
+# get positional args and override above vars if provided
+while [ "$1" != "" ]; do
+    case $1 in
+        -u | --user )    shift
+                         dbuser=$1
+                         ;;
+        -p | --pass )    shift
+                         dbpass=$1
+                         ;;
+        -h | --host )    shift
+                         dbhost=$1
+                         ;;
+        -w | --webroot ) shift
+                         webroot=$1
+                         ;;
+    esac
+    shift
+done
+        
+
 echo "Cleaning up existing installation..."
-cd /home/vineet/public_html/projects/kodecrm_platforms
+cd $webroot
 rm -rf magento
 
-echo "Extracting magento installation..."
+
+echo "Get and Magento code..."
+if [ -f magento-1.7.0.2.tar.gz ]
+then
+    echo "Magento tar file already exists.."
+else
+    wget http://www.magentocommerce.com/downloads/assets/1.7.0.2/magento-1.7.0.2.tar.gz
+fi
+
+echo "Extracting Magento files.."
 tar xzf magento-1.7.0.2.tar.gz
 
-# get sample data
+
 echo "Preparing sample data..."
 if [ -f magento-sample-data-1.6.1.0.tar.gz ]
 then
@@ -20,6 +49,7 @@ then
 else
     wget http://www.magentocommerce.com/downloads/assets/1.6.1.0/magento-sample-data-1.6.1.0.tar.gz    
 fi
+
 
 tar xzf magento-sample-data-1.6.1.0.tar.gz
 
