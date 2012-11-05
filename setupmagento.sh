@@ -5,7 +5,10 @@ dbpass="kode"
 dbhost="localhost"
 webroot=/home/vineet/public_html/projects/kodecrm_platforms
 
-PWD=`pwd`
+OPWD=`pwd`
+
+# build kodecrm magento module
+./build.sh
 
 # get positional args and override above vars if provided
 while [ "$1" != "" ]; do
@@ -94,9 +97,7 @@ php -f install.php -- \
     --admin_username "admin" \
     --admin_password "k0d3crmm4g3nt0"
 
-
 echo "Adding KodeCRM extension..."
-sh $PWD/build.sh
-cp -r $PWD/build/magento/app .
-cp -r $PWD/build/magento/lib .
+cp -r $OPWD/build/magento/app .
+cp -r $OPWD/build/magento/lib .
 
