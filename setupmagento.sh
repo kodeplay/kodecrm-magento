@@ -5,6 +5,8 @@ dbpass="kode"
 dbhost="localhost"
 webroot=/home/vineet/public_html/projects/kodecrm_platforms
 
+PWD=`pwd`
+
 # get positional args and override above vars if provided
 while [ "$1" != "" ]; do
     case $1 in
@@ -94,9 +96,7 @@ php -f install.php -- \
 
 
 echo "Adding KodeCRM extension..."
-rm -rf ../kodecrm_module_magento
-git clone git@vineet-desktop.local:/home/git/repos/kodecrm_module_magento.git ../kodecrm_module_magento
-cp -r ../kodecrm_module_magento/magento/app .
-cp -r ../kodecrm_module_magento/magento/lib .
-rm -rf ../kodecrm_module_magento
+sh $PWD/build.sh
+cp -r $PWD/build/magento/app .
+cp -r $PWD/build/magento/lib .
 
